@@ -2,16 +2,16 @@ import sys
 
 import pygame
 
+from settings import Settings
+
 
 def run_game():
-    """Инициализирует игру и создает объект экрана"""
+    """Инициализирует pygame, settings и объект экрана"""
 
     pygame.init()
-    screen = pygame.display.set_mode((1200, 800))
+    ai_settings = Settings()
+    screen = pygame.display.set_mode((ai_settings.screen_width, ai_settings.screen_height))
     pygame.display.set_caption("Alien Invasion")
-
-    # Назанчение цвета фона
-    bg_color = (230, 230, 230)
 
     # Запуск цикла игры
     while True:
@@ -20,8 +20,8 @@ def run_game():
             if even.type == pygame.QUIT:
                 sys.exit()
 
-        # ПРи каждом проходе цикла перерисовывается экран
-        screen.fill(bg_color)
+        # При каждом проходе цикла перерисовывается экран
+        screen.fill(ai_settings.bg_color)
 
         # Отображение последнего прорисованного экрана
         pygame.display.flip()
