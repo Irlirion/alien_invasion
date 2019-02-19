@@ -14,6 +14,7 @@ class Ship():
         # Каждый новый корабль появляется у нижнего края экрана
         self.rect.centerx = self.screen_rect.centerx
         self.rect.bottom = self.screen_rect.bottom
+
     def blitme(self):
         """Рисует корабль в текущей позиции"""
         self.screen.blit(self.image, self.rect)
