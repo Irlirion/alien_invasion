@@ -1,7 +1,7 @@
 import pygame
 
 
-class Ship():
+class Ship:
     def __init__(self, ai_settings, screen):
         """Инициализирует корабль и задает его начальную позицию"""
         self.screen = screen
@@ -16,7 +16,7 @@ class Ship():
         self.rect.centerx = self.screen_rect.centerx
         self.rect.bottom = self.screen_rect.bottom
 
-        # охранение вещественной координаты центра корабля
+        # Сохранение вещественной координаты центра корабля
         self.center = float(self.rect.centerx)
 
         # Флаги перемещения

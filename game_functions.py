@@ -12,7 +12,7 @@ def check_keydown_events(event, ship):
 
 
 def check_keyup_events(event, ship):
-    """Реагирует на отпускание клавишь"""
+    """Реагирует на отпускание клавиш"""
     if event.key == pygame.K_RIGHT:
         ship.moving_right = False
     elif event.key == pygame.K_LEFT:
@@ -20,7 +20,7 @@ def check_keyup_events(event, ship):
 
 
 def check_events(ship):
-    """Обрабатывает нажатия клавиш и  события мыши"""
+    """Обрабатывает нажатия клавиш и события мыши"""
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             sys.exit()
