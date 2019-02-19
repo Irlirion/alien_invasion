@@ -1,7 +1,6 @@
-import sys
-
 import pygame
 
+import game_functions as gf
 from settings import Settings
 from ship import Ship
 
@@ -19,10 +18,7 @@ def run_game():
 
     # Запуск цикла игры
     while True:
-        # Отслеживание событий клавиатуры
-        for even in pygame.event.get():
-            if even.type == pygame.QUIT:
-                sys.exit()
+        gf.check_events()
 
         # При каждом проходе цикла перерисовывается экран
         screen.fill(ai_settings.bg_color)
