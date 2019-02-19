@@ -3,7 +3,7 @@ import sys
 import pygame
 
 
-def chek_keydown_events(event, ship):
+def check_keydown_events(event, ship):
     """Реагирует на нажатие клавиш"""
     if event.key == pygame.K_RIGHT:
         ship.moving_right = True
@@ -11,7 +11,7 @@ def chek_keydown_events(event, ship):
         ship.moving_left = True
 
 
-def chek_keyup_events(event, ship):
+def check_keyup_events(event, ship):
     """Реагирует на отпускание клавишь"""
     if event.key == pygame.K_RIGHT:
         ship.moving_right = False
@@ -25,9 +25,9 @@ def check_events(ship):
         if event.type == pygame.QUIT:
             sys.exit()
         elif event.type == pygame.KEYDOWN:
-            chek_keydown_events(event, ship)
+            check_keydown_events(event, ship)
         elif event.type == pygame.KEYUP:
-            chek_keyup_events(event, ship)
+            check_keyup_events(event, ship)
 
 
 def update_screen(ai_settings, screen, ship):
