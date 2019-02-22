@@ -2,6 +2,7 @@ import sys
 
 import pygame
 
+from alien import Alien
 from bullet import Bullet
 
 
@@ -67,3 +68,22 @@ def update_bullets(bullets):
     for bullet in bullets.copy():
         if bullet.rect.bottom <= 0:
             bullets.remove(bullet)
+
+
+def create_fleet(ai_settings, screen, aliens):
+    """Создает флот пришельцев"""
+    # Создание пришельца и вычисление колличества пришельцев в ряду
+    # нтервал между соседними пришельцами равен ширине пришельца
+
+    alien = Alien(ai_settings, screen)
+    alien_width = alien.rect.width
+    available_space_x = ai_settings.screen_width - 2 * alien_width
+    number_aliens_x = int(available_space_x / (2 * alien_width))
+
+    # Создание первого ряда пришельцев
+    for alien_number in range(number_aliens_x):
+        # Создание пришельца т размещение его в ряду
+        alien = Alien(ai_settings, screen)
+        alien.x = alien_width + 2 * alien_width * alien_number
+        alien.rect.x = alien.x
+        aliens.add(alien)
