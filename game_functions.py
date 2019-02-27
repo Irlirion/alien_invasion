@@ -201,6 +201,13 @@ def ship_hit(ai_settings, screen, stats, sb, ship, aliens, bullets):
         # Пауза
         sleep(0.5)
     else:
+        # Очистка списков пришельцев и пуль
+        aliens.empty()
+        ship.center_ship()
+
+        # Пауза
+        sleep(0.5)
+
         stats.game_active = False
         pygame.mouse.set_visible(True)
 
