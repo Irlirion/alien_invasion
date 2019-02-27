@@ -10,7 +10,7 @@ class GameStats:
         self.game_active = False
 
         # Рекорд не должен сбрасывается
-        self.hight_score = 0
+        self.high_score = 0
 
     def reset_stats(self):
         """Инициализирует статистику, изменяющуюся в ходе игры"""
