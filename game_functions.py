@@ -196,6 +196,7 @@ def ship_hit(ai_settings, screen, stats, sb, ship, aliens, bullets):
 
         # Очистка списков пришельцев и пуль
         aliens.empty()
+        bullets.empty()
         ship.center_ship()
 
         # Пауза
@@ -203,7 +204,7 @@ def ship_hit(ai_settings, screen, stats, sb, ship, aliens, bullets):
     else:
         # Очистка списков пришельцев и пуль
         aliens.empty()
-        ship.center_ship()
+        bullets.empty()
 
         # Пауза
         sleep(0.5)
