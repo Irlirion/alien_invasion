@@ -116,9 +116,13 @@ def check_bullet_alien_collisions(ai_settings, screen, stats, sb, ship, aliens, 
         check_high_score(stats, sb)
 
     if len(aliens) == 0:
-        # Уничтожение пуль, повышение скорости и создание нового флота
+        # Если весь флот уничтожен, начинается следующий уровень
         bullets.empty()
         ai_settings.increase_speed()
+
+        # Увеличение уровня
+        stats.level += 1
+        sb.prep_level()
         create_fleet(ai_settings, screen, ship, aliens)
 
 
