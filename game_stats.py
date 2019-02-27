@@ -9,6 +9,9 @@ class GameStats:
         # Игра запускается в неактивном состоянии
         self.game_active = False
 
+        # Рекорд не должен сбрасывается
+        self.hight_score = 0
+
     def reset_stats(self):
         """Инициализирует статистику, изменяющуюся в ходе игры"""
         self.ships_left = self.ai_settings.ship_limit
